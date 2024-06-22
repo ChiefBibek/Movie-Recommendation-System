@@ -1,2 +1,8 @@
 # Ignore movie.csv file
 movie_data.csv
+
+.idea
+*.pyc
+tempCodeRunnerFile.py
+__pycache__
+
