@@ -26,4 +26,4 @@ def recommend_movies():
   return jsonify(recommendations)
 
 if __name__ == '__main__':
-  app.run(debug=True)  # Run the Flask development server (for testing)
+  app.run#(debug=True)  # Run the Flask development server (for testing)
