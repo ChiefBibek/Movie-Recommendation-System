@@ -3,7 +3,7 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { GlobalContext } from "../Context/GlobalState";
 
-const GenreList = ({ setSelectedGenre }) => {
+const ActorList = ({ setSelectedActor}) => {
   const animatedComponents = makeAnimated();
   const { options } = useContext(GlobalContext);
   const customTheme = (theme) => ({
@@ -14,7 +14,7 @@ const GenreList = ({ setSelectedGenre }) => {
     },
   });
   const handleChange = (selectedOptions) => {
-    setSelectedGenre(selectedOptions);
+    setSelectedActor(selectedOptions);
   };
 
   return (
@@ -23,10 +23,10 @@ const GenreList = ({ setSelectedGenre }) => {
         onChange={handleChange}
         components={animatedComponents}
         isMulti
-        noOptionsMessage={() => "No genre is found"}
-        options={options.genre}
+        noOptionsMessage={() => "No actor is found"}
+        options={options.actor}
         className="font-semibold text-sm"
-        placeholder="Select Genre . . ."
+        placeholder="Select Actor . . ."
         theme={customTheme}
         styles={{
           placeholder: (baseStyles) => ({
@@ -77,4 +77,4 @@ const GenreList = ({ setSelectedGenre }) => {
   );
 };
 
-export default GenreList;
+export default ActorList;
