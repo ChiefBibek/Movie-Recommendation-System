@@ -77,9 +77,3 @@ def get_recommendations(actors='', genre='', top_n=10):
 # print(recommendations)
 
 
-# Example usage
-actors_input = ""
-genre_input = 'Action|Adventure|Fantasy'
-
-recommendations = get_recommendations(actors_input, genre_input)
-print(recommendations)
