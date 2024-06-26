@@ -3,6 +3,18 @@ from movie_recommender import get_recommendations
 
 app = Flask(__name__)
 
+# List of movie genres
+genres = [
+    'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+    'Documentary', 'Drama', 'Family', 'Fantasy', 'Film-Noir', 'Game-Show',
+    'History', 'Horror', 'Music', 'Musical', 'Mystery', 'News', 'Reality-TV',
+    'Romance', 'Sci-Fi', 'Short', 'Sport', 'Thriller', 'War', 'Western'
+]
+
+@app.route('/genres', methods=['GET'])
+def get_genres():
+    return jsonify({'genres': genres})
+
 @app.route('/recommend', methods=['POST'])
 def recommend_movies():
     # Access data from the request (assuming JSON format)
