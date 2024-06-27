@@ -1,39 +1,34 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-// const url='https://movie-recommendation-system-14.onrender.com/recommend'
+const url='https://movie-recommendation-system-14.onrender.com/genres'
 
-const options = {
-  genre:  [
-    { value: 'action', label: 'Action' },
-    { value: 'comedy', label: 'Comedy' },
-    { value: 'animation', label: 'Animation' },
-    { value: 'biography', label: 'Biography' },
-    { value: 'crime', label: 'Crime' },
-    { value: 'documentary', label: 'Documentary' },
-    { value: 'drama', label: 'Drama' },
-    { value: 'family', label: 'Family' },
-    { value: 'fantasy', label: 'Fantasy' },
-    { value: 'history', label: 'History' },
-    { value: 'horror', label: 'Horror' }
-  ],
-  actor:[
-    {value:'Tom Hanks',label:'Tom Hanks'},
-    {value:'Leo Di Caprio',label:'Leo Di Caprio'},
-    {value:'Brad Pitt',label:'Brad Pitt'},
-    {value:'Ryan Renolds',label:'Ryan Renolds'},
-    {value:'Chris Hemsworth',label:'Chris Hemsworth'},
-    {value:'Chris Evans',label:'Chris Evans'},
-    {value:'RDJ',label:'RDJ'},
-  ]
 
-}
-
-  export const GlobalContext=createContext(options)
+export const GlobalContext=createContext()
 
 //provider
 export const GlobalProvider=({children})=>{
+  const [genres,setGenres]=useState([])
+  useEffect(()=>{
+    const fetchGenres=async()=>{
+      try{
+        const response = await fetch(url)
+        if(!response.ok){
+          throw new Error('Error 404!!')
+        }
+        const data= await response.json();
+        const transformed=data.genres.map(genre=>({
+          label:genre,
+          value:genre
+        }))
+        setGenres(transformed)
+      } catch(error){
+        console.error('Error:',error)
+      }
+    }
+    fetchGenres();
+  },[])
     return (
-        <GlobalContext.Provider value={{options:options}}>
+        <GlobalContext.Provider value={{options:genres}}>
             {children}
         </GlobalContext.Provider>
     )

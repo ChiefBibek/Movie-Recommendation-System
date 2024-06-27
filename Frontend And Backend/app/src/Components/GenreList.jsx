@@ -17,6 +17,7 @@ const GenreList = ({ setSelectedGenre }) => {
     setSelectedGenre(selectedOptions);
   };
 
+
   return (
     <div className="sm:w-[30rem] md:w-[40rem]">
       <Select
@@ -24,7 +25,7 @@ const GenreList = ({ setSelectedGenre }) => {
         components={animatedComponents}
         isMulti
         noOptionsMessage={() => "No genre is found"}
-        options={options.genre}
+        options={options}
         className="font-semibold text-sm"
         placeholder="Select Genre . . ."
         theme={customTheme}

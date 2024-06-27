@@ -23,7 +23,6 @@ function App() {
     <MainBody/>
       </>
     )}
-  
     </GlobalProvider>
   )
 }
