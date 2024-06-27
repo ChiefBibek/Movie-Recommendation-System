@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import Select from "react-select";
+import React, { useState } from "react";
+import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
-import { GlobalContext } from "../Context/GlobalState";
 
-const ActorList = ({ setSelectedActor}) => {
+const ActorList = ({ setSelectedActor }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const Message = (inputValue) => `Input ${inputValue}`;
   const animatedComponents = makeAnimated();
-  const { options } = useContext(GlobalContext);
   const customTheme = (theme) => ({
     ...theme,
     colors: {
@@ -13,21 +13,37 @@ const ActorList = ({ setSelectedActor}) => {
       primary: "#00272B",
     },
   });
-  const handleChange = (selectedOptions) => {
-    setSelectedActor(selectedOptions);
+
+  const handleChange = (options) => {
+    if (options.length <= 3) {
+      setSelectedOptions(options);
+      setSelectedActor(options);
+    }
   };
 
   return (
     <div className="sm:w-[30rem] md:w-[40rem]">
-      <Select
+      <CreatableSelect
         onChange={handleChange}
         components={animatedComponents}
+        formatCreateLabel={Message}
         isMulti
-        noOptionsMessage={() => "No actor is found"}
-        options={options.actor}
+        isClearable
+        value={selectedOptions}
+        noOptionsMessage={({ inputValue }) =>
+          inputValue ? (
+            <div className="text-red-500">Duplicate Actor Name!!!</div>
+          ) : null
+        }
         className="font-semibold text-sm"
-        placeholder="Select Actor . . ."
+        placeholder="Input Actor . . ."
         theme={customTheme}
+        inputValue={selectedOptions.length >= 3 ? '' : undefined}
+        onInputChange={(inputValue, { action }) => {
+          if (selectedOptions.length >= 3 && action === 'input-change') {
+            return;
+          }
+        }}
         styles={{
           placeholder: (baseStyles) => ({
             ...baseStyles,
