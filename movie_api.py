@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from movie_recommender import get_recommendations
 
 app = Flask(__name__)
-
+CORS(app)
 # List of movie genres
 genres = [
     'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
