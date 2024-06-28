@@ -14,9 +14,11 @@ function App() {
     setSubmitted(true)
   }
   return (
-    <GlobalProvider>
+    <GlobalProvider>  
+      <div className=' sm:flex sm:flex-col sm:flex-start sm:ml-20  md:ml-12'>
     <Title/>
     <Form onSubmit={handleform}/>
+    </div>
     {submitted &&(
       <>
     <hr />
