@@ -8,8 +8,21 @@ const Form = ({onSubmit}) => {
   const [selectedactor,setSelectedActor]=useState([])
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Selected genres:', selectedgenre);
-    console.log('Selected actors:', selectedactor);
+    let formdata={
+      selectedgenre:selectedgenre,
+      selectedactor:selectedactor
+    }
+    fetch("/recommend",{
+      method:'post',
+      headers:{
+        "Content-Type":"application/json",
+      },
+      body:JSON.stringify(formdata)
+    }).then(response=>response.json()).then(data=>{
+      console.log(data)
+    })
+    // console.log('Selected genres:', selectedgenre);
+    // console.log('Selected actors:', selectedactor);
     onSubmit();
   };
 
