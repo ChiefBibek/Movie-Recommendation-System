@@ -27,12 +27,16 @@ const Form = ({onSubmit}) => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit} className='m-8 md:flex md:justify-center md:items-center md:flex-col'>
-      <label htmlFor="" className="text-[#E9AFA3] text-sm sm:text-lg md:text-xl lg:text-2xl  font-semibold ">Choose your preferred genre</label>
+    <form action="" onSubmit={handleSubmit} className='m-8 sm:m-0 md:flex md:justify-center md:items-start md:flex-col'>
+      <div className='sm:mt-4 '>
+      <label htmlFor="" className="text-[#E9AFA3] text-sm sm:text-lg lg:text-xl  font-semibold ">Choose your preferred genre</label>
       <GenreList setSelectedGenre={setSelectedGenre}/>
-      <label htmlFor="" className="text-[#E9AFA3] text-sm sm:text-lg md:text-xl lg:text-2xl  font-semibold ">Choose your preferred Actors</label>
+      </div>
+      <div className='sm:m-0 sm:mt-3'>
+      <label htmlFor="" className="text-[#E9AFA3] text-sm  sm:text-lg lg:text-xl  font-semibold ">Choose your preferred Actors</label>
       <ActorList setSelectedActor={setSelectedActor}/>
-      <input type="submit" value="Recommend Movie" className='bg-[#EDFFEC] text-[#270722] mt-8 px-[0.5rem] py-[0.2rem] text-sm rounded-md cursor-pointer sm:py-2 lg:px-[2rem] border-none ' />
+      </div>
+      <input type="submit" value="Recommend Movie" className='bg-zinc-800 text-zinc-400 mt-8 px-[0.5rem] py-[0.2rem] text-sm rounded-md cursor-pointer sm:py-2 lg:px-[2rem] border-none' />
       </form>
   )
 }
