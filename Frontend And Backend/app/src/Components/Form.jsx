@@ -25,14 +25,14 @@ const Form = ({ onSubmit }) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      const movies=data.recommendations
+      onSubmit(movies);
     })
     .catch((error) => {
       console.error('Fetch error:', error);
     });
     console.log('Selected genres:', selectedgenre);
     console.log('Selected actors:', selectedactor);
-    onSubmit();
   };
 
   return (

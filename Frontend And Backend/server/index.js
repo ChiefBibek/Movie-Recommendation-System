@@ -30,7 +30,7 @@ app.post('/recommend',(req,res)=>{
     axios.post(apiUrl, requestData)
     .then(response => {
           console.log('Recommendations:', response.data);
-          res.json({ recommendations: "Hello world" })
+          res.json({ recommendations: response.data })
                 })
         .catch(error => {
               console.error('Error fetching recommendations:', error);

@@ -10,8 +10,10 @@ import MainBody from './Components/MainBody'
 
 function App() {
   const [submitted,setSubmitted]=useState(false)
-  const handleform=()=>{
+  const [movieres,setMovieRes]=useState([])
+  const handleform=(movies)=>{
     setSubmitted(true)
+    setMovieRes(movies)
   }
   return (
     <GlobalProvider>  
@@ -22,7 +24,7 @@ function App() {
     {submitted &&(
       <>
     <hr />
-    <MainBody/>
+    <MainBody movieres={movieres}/>
       </>
     )}
     </GlobalProvider>
