@@ -15,7 +15,7 @@ function App() {
   }
   return (
     <GlobalProvider>  
-      <div className=' sm:flex sm:flex-col sm:flex-start sm:ml-20  md:ml-12'>
+      <div className=' sm:flex sm:flex-col sm:flex-start sm:ml-20  md:ml-12 sm:mb-8'>
     <Title/>
     <Form onSubmit={handleform}/>
     </div>
