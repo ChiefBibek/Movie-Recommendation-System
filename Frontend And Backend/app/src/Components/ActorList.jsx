@@ -10,7 +10,8 @@ const ActorList = ({ setSelectedActor }) => {
     ...theme,
     colors: {
       ...theme.colors,
-      primary: "#00272B",
+      primary: "#333",
+      primary25:'#BB86FC'
     },
   });
 
@@ -47,45 +48,47 @@ const ActorList = ({ setSelectedActor }) => {
         styles={{
           placeholder: (baseStyles) => ({
             ...baseStyles,
-            color: "#E9AFA3",
+            color: "#E0E0E0",
           }),
           input: (styles) => ({
             ...styles,
-            color: "#E9AFA3",
+            color: "#E0E0E0",
           }),
           clearIndicator: () => ({
-            color: "#E9AFA3",
+             color: "#E0E0E0",
+            cursor:'pointer '
           }),
           dropdownIndicator: () => ({
-            color: "#E9AFA3",
+            color: "#E0E0E0",
             marginLeft: "0.5rem",
             marginRight: "0.5rem",
+            cursor:'pointer'
           }),
           control: (styles) => ({
             ...styles,
-            backgroundColor: "#00272B",
-            border: "#00272B",
+            backgroundColor: "#333",
+            border: "#333",
           }),
           option: (styles, { data, isDisable, isFocused, isSelected }) => ({
             ...styles,
-            color: "green",
+            color: "#E0E0E0",
           }),
           menuList: (styles) => ({
             ...styles,
-            backgroundColor: "#00272B",
+            backgroundColor: "#333",
           }),
           multiValue: (styles, { data }) => ({
             ...styles,
-            backgroundColor: "#00272B",
-            color: "blue",
+            backgroundColor: "#333",
           }),
           multiValueLabel: (styles) => ({
             ...styles,
-            color: "#E9AFA3",
+            color: "#e0e0e0",
           }),
           multiValueRemove: (styles) => ({
-            ...styles,
-            color: "#E9AFA3",
+            ...styles, 
+            color: "#e0e0e0",
+            backgroundColor:'#bb86fc'
           }),
         }}
       />

@@ -44,7 +44,7 @@ const Form = ({ onSubmit }) => {
       <div className="sm:mt-4 ">
         <label
           htmlFor=""
-          className="text-[#E9AFA3] text-sm sm:text-lg lg:text-xl  font-semibold "
+          className="text-[#BB86FC] text-sm sm:text-lg lg:text-xl  font-semibold "
         >
           Choose your preferred genre
         </label>
@@ -53,7 +53,7 @@ const Form = ({ onSubmit }) => {
       <div className="sm:m-0 sm:mt-3">
         <label
           htmlFor=""
-          className="text-[#E9AFA3] text-sm  sm:text-lg lg:text-xl  font-semibold "
+          className="text-[#BB86FC] text-sm  sm:text-lg lg:text-xl  font-semibold "
         >
           Choose your preferred Actors
         </label>
@@ -62,7 +62,7 @@ const Form = ({ onSubmit }) => {
       <input
         type="submit"
         value="Recommend Movie"
-        className="bg-zinc-800 text-zinc-400 mt-8 px-[0.5rem] py-[0.2rem] text-sm rounded-md cursor-pointer sm:py-2 lg:px-[2rem] border-none"
+        className="bg-[#BB86FC] text-[#121212] mt-8 px-[0.5rem] py-[0.2rem] text-sm rounded-md cursor-pointer sm:py-2 lg:px-[2rem] border-none"
       />
     </form>
   );
