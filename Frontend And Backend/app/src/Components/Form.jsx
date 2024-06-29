@@ -11,7 +11,7 @@ const Form = ({ onSubmit }) => {
       selectedgenre: selectedgenre,
       selectedactor: selectedactor,
     };
-    fetch("http://localhost:3001/recommend", {
+    fetch("http://localhost:4000/recommend", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

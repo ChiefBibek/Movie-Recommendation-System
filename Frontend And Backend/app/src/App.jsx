@@ -6,6 +6,7 @@ import Title from './Components/Title'
 import Form from './Components/Form'
 import { GlobalProvider } from './Context/GlobalState'
 import MainBody from './Components/MainBody'
+// import Footer from './Components/Footer'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     <MainBody movieres={movieres}/>
       </>
     )}
+    {/* <Footer/> */}
     </GlobalProvider>
   )
 }
