@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='bg-zinc-800 text-[#BB86FC] text-sm tracking-tighter flex justify-center items-center flex-col p-2'>
+    <footer className='bg-zinc-800 text-[#BB86FC] text-sm tracking-tighter flex justify-center items-center flex-col p-2 md:py-4 md:text-base'>
         <div>
          &copy; 2024 Movie Recommendation. All rights reserved.
         </div>
