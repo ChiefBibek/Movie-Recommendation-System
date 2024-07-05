@@ -17,7 +17,7 @@ function App() {
   };
   return (
     <GlobalProvider>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen ">
         {/* Header Section */}
         <header className="sm:px-20">
           <div className="container mx-auto">
@@ -31,7 +31,7 @@ function App() {
           <div className="container mx-auto p-4">
             {submitted && (
               <>
-                <hr />
+                <hr/>
                 <MainBody movieres={movieres} />
               </>
             )}

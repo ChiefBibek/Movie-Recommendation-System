@@ -4,7 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],  theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        title:["Chakra Petch"],  
+        body:["Titillium Web"],
+        list_title:["Abel"],
+        list:["Rajdhani"]
+      }
+    },
   },
   plugins: [],
 }
