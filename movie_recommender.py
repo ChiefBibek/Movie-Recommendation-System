@@ -77,4 +77,8 @@ def get_recommendations(actors='', genre='', top_n=10):
 # recommendations = get_recommendations(actors_input, genre_input)
 # print(recommendations)
 
+# actors_input = input("Enter actors (comma-separated): ")
+# genre_input = input("Enter genre: ")
 
+# recommendations = get_recommendations(actors_input, genre_input)
+# print(recommendations)
