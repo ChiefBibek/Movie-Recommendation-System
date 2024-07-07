@@ -5,6 +5,7 @@ import ActorList from "./ActorList";
 const Form = ({ onSubmit }) => {
   const [selectedgenre, setSelectedGenre] = useState([]);
   const [selectedactor, setSelectedActor] = useState([]);
+  const [loading,setLoading]=useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
     let formdata = {
@@ -18,21 +19,21 @@ const Form = ({ onSubmit }) => {
       },
       body: JSON.stringify(formdata),
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const movies=data.recommendations
-      onSubmit(movies);
-    })
-    .catch((error) => {
-      console.error('Fetch error:', error);
-    });
-    console.log('Selected genres:', selectedgenre);
-    console.log('Selected actors:', selectedactor);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const movies = data.recommendations;
+        onSubmit(movies);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
+    console.log("Selected genres:", selectedgenre);
+    console.log("Selected actors:", selectedactor);
   };
 
   return (

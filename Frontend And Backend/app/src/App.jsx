@@ -28,7 +28,7 @@ function App() {
 
         {/* Main Content Section */}
         <main className="flex-1 overflow-y-auto">
-          <div className="container mx-auto p-4">
+          <div className="my-5">
             {submitted && (
               <>
                 <hr/>

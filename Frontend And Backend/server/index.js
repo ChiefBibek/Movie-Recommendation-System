@@ -4,18 +4,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-const stringToList = (string) => {
-	const regex = /\[(.*?)\]/;
-	const listMatch = string.match(regex);
-	let moviesList = [];
-	if (listMatch && listMatch[1]) {
-		moviesList = listMatch[1]
-			.split("', '")
-			.map((item) => item.replace(/^'/, "").replace(/'$/, ""));
-	}
-	return moviesList;
-};
-
 app.use(
 	cors({
 		origin: "http://localhost:5173",
@@ -46,9 +34,7 @@ app.post("/recommend", (req, res) => {
 	axios
 		.post(apiUrl, requestData)
 		.then((response) => {
-			const result = Array.isArray(response.data)
-				? response.data
-				: stringToList(response.data);
+			const result = response.data;
 			console.log("Recommendations:", result);
 
 			res.json({ recommendations: result });

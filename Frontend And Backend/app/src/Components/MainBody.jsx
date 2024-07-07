@@ -1,17 +1,31 @@
-import React from 'react'
+import React from "react";
 
-const MainBody = ({movieres}) => {
-  console.log(movieres)
+const MainBody = ({ movieres }) => {
+  console.log(movieres);
   return (
-    <div className='m-5 '>
-        <h1 className='text-[#BB86FC]  font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title'>Top 10 Recommended Movies are:</h1>
-        <l>{movieres.map((movie,index)=>(
-          <li key={index} className='text-[#E1BBC9] font-semibold text-sm sm:text-lg md:text-xl lg:text-2xl list-[square] font-list' >{movie}</li>
+    <div className="my-7 px-1 md:px-20">
+      <h1 className="text-[#BB86FC]  font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title text-center mb-5 md:text-start">
+        Top 10 Recommended Movies are:
+      </h1>
+      <ul className="flex flex-wrap gap-8 justify-center md:justify-start">
+        {movieres.map(({ poster, rating, title }, index) => (
+          <li key={index} className="text-[#F5F1ED] font-list">
+            <div className=" w-[11rem] sm:w-[14rem] md:w-[15rem] lg:w-[12rem] bg-[#0B0500]">
+              <img
+                src={`${poster}`}
+                alt={`${title}`}
+                className="w-full h-auto"
+              />
+              <div className="flex flex-col text-[0.7rem] p-3">
+                <h2 className="uppercase font-semibold text-base text-[#FFF9FB] sm:text-lg">{title}</h2>
+                <h2 className="text-sm text-[#D3D4D9] sm:text-base">IMDb: {rating}</h2>
+              </div>
+            </div>
+          </li>
         ))}
-        </l>
-
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default MainBody
+export default MainBody;
