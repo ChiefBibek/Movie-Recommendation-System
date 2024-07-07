@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import GenreList from "./GenreList";
 import ActorList from "./ActorList";
 
-const Form = ({ onSubmit }) => {
+const Form = ({ onSubmit,setLoading }) => {
   const [selectedgenre, setSelectedGenre] = useState([]);
   const [selectedactor, setSelectedActor] = useState([]);
-  const [loading,setLoading]=useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true)
     let formdata = {
       selectedgenre: selectedgenre,
       selectedactor: selectedactor,

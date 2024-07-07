@@ -10,7 +10,7 @@ const MainBody = ({ movieres }) => {
       <ul className="flex flex-wrap gap-8 justify-center md:justify-start">
         {movieres.map(({ poster, rating, title }, index) => (
           <li key={index} className="text-[#F5F1ED] font-list">
-            <div className=" w-[11rem] sm:w-[14rem] md:w-[15rem] lg:w-[12rem] bg-[#0B0500]">
+            <div className=" w-[10rem] sm:w-[12rem] md:w-[14rem] lg:w-[15rem] bg-zinc-800 h-full">
               <img
                 src={`${poster}`}
                 alt={`${title}`}

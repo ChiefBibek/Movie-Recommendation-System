@@ -7,31 +7,47 @@ import Form from "./Components/Form";
 import { GlobalProvider } from "./Context/GlobalState";
 import MainBody from "./Components/MainBody";
 import Footer from "./Components/Footer";
+import { Discuss, DNA } from "react-loader-spinner";
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
   const [movieres, setMovieRes] = useState([]);
-  const handleform = (movies) => {
+  const [loading, setLoading] = useState(false);
+  const handleform = async (movies) => {
     setSubmitted(true);
+    setLoading(false);
     setMovieRes(movies);
   };
+
   return (
     <GlobalProvider>
       <div className="flex flex-col min-h-screen ">
         {/* Header Section */}
         <header className="sm:px-20">
-          <div className="container mx-auto">
+          <div className="container">
             <Title />
-            <Form onSubmit={handleform} />
+            <Form onSubmit={handleform} setLoading={setLoading} />
           </div>
         </header>
 
         {/* Main Content Section */}
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto flex justify-center items-center">
           <div className="my-5">
-            {submitted && (
+            {loading && (
+              <div className="">
+              <DNA
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="fidget-spinner-wrapper"
+                />
+                </div>
+            )}
+            {submitted && !loading && (
               <>
-                <hr/>
+                <hr />
                 <MainBody movieres={movieres} />
               </>
             )}
