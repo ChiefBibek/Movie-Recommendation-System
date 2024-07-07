@@ -4,6 +4,7 @@ from movie_recommender import get_recommendations
 
 app = Flask(__name__)
 CORS(app)
+
 # List of movie genres
 genres = [
     'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
@@ -28,6 +29,8 @@ def recommend_movies():
     # Call the get_recommendations function from your script
     try:
         recommendations = get_recommendations(actors, genre)
+
+
     except Exception as e:
         # Handle potential errors from the recommendation function (optional)
         print(f"Error generating recommendations: {e}")
@@ -37,4 +40,4 @@ def recommend_movies():
     return jsonify(recommendations)
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=10000)
+    app.run(debug=True, host='0.0.0.0', port=10000)
