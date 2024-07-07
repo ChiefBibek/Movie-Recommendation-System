@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const port=process.env.PORT||3000;
 
 app.use(
 	cors({
@@ -46,6 +47,6 @@ app.post("/recommend", (req, res) => {
 	// res.json({"Message":"Form Submitted"})
 });
 
-app.listen(4000, () => {
-	console.log("Server is running on http://localhost:4000");
+app.listen(port, () => {
+	console.log(`Server is running on http://localhost:${port}`);
 });
