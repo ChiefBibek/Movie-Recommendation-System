@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import GenreList from "./GenreList";
 import ActorList from "./ActorList";
 
-const Form = ({ onSubmit,setLoading }) => {
+const Form = ({ onSubmit, setLoading }) => {
   const [selectedgenre, setSelectedGenre] = useState([]);
   const [selectedactor, setSelectedActor] = useState([]);
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLoading(true)
+    setLoading(true);
     let formdata = {
       selectedgenre: selectedgenre,
       selectedactor: selectedactor,
     };
-    fetch("http://localhost:3000/recommend", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formdata),
-    })
+    fetch(
+      "https://movie-recommendation-system-backend-b3ei.onrender.com/recommend",
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formdata),
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

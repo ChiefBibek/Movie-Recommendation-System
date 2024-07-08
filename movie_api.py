@@ -3,7 +3,7 @@ from flask_cors import CORS
 from movie_recommender import get_recommendations
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/recommend": {"origins": "http://127.0.0.1:8080"}})
 
 # List of movie genres
 genres = [
