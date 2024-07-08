@@ -19,16 +19,6 @@ const Form = ({ onSubmit, setLoading }) => {
       },
       body: JSON.stringify(formdata),
     })
-    fetch(
-      "https://movie-recommendation-system-backend-b3ei.onrender.com/recommend",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formdata),
-      }
-    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -59,7 +49,7 @@ const Form = ({ onSubmit, setLoading }) => {
         >
           Choose your preferred genre
         </label>
-        <GenreList setSelectedGenre={setSelectedGenre} />
+        <GenreList setSelectedGenre={setSelectedGenre}/>
       </div>
       <div className="sm:m-0 sm:mt-3">
         <label
