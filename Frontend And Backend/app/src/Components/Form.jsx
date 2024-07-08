@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
 import GenreList from "./GenreList";
 import ActorList from "./ActorList";
+
+const axiosInstance = axios.create({
+  baseURL: "https://movie-recommendation-system-14.onrender.com",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
 const Form = ({ onSubmit, setLoading }) => {
   const [selectedgenre, setSelectedGenre] = useState([]);
@@ -12,26 +20,17 @@ const Form = ({ onSubmit, setLoading }) => {
       selectedgenre: selectedgenre,
       selectedactor: selectedactor,
     };
-
-    fetch("/api1/recommend", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formdata),
-    })
+    axiosInstance
+      .post("/recommend", formdata)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const movies = data.recommendations;
+        const movies = response.data.recommendations;
         onSubmit(movies);
       })
       .catch((error) => {
         console.error("Fetch error:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
     console.log("Selected genres:", selectedgenre);
     console.log("Selected actors:", selectedactor);
