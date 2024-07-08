@@ -12,6 +12,13 @@ const Form = ({ onSubmit, setLoading }) => {
       selectedgenre: selectedgenre,
       selectedactor: selectedactor,
     };
+    fetch("https://movie-recommendation-system-backend-b3ei.onrender.com/recommend", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formdata),
+    })
     fetch(
       "https://movie-recommendation-system-backend-b3ei.onrender.com/recommend",
       {
