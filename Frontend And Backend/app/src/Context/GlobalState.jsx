@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import Loader from "../Components/Loader";
 
-const url = "https://movie-recommendation-system-14.onrender.com/genres";
+const url = "/api2/genres";
 
 export const GlobalContext = createContext();
 

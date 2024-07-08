@@ -11,6 +11,16 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/fallback/, ""),
       },
-    },
-  },
+      '/api1': {
+        target: 'https://movie-recommendation-system-backend-b3ei.onrender.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api1/, ''),
+      },
+      '/api2': {
+        target: 'https://movie-recommendation-system-14.onrender.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api2/, ''),
+      }
+    },
+  },
 });
