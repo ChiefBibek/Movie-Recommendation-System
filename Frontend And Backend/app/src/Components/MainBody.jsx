@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Popup from "./Popup";
 
 const MainBody = ({ movieres }) => {
-  if (!Array.isArray(movieres) || movieres.length === 0) {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+  React.useEffect(() => {
+    if (!Array.isArray(movieres) || movieres.length === 0) {
+      setPopupVisible(true);
+    } else {
+      setPopupVisible(false);
+    }
+  }, [movieres]);
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
+  if (isPopupVisible) {
     return (
-      <Popup message={`No actors matched with '${movieres}'`}/>
+      <Popup message={`No actors matched with '${movieres}'`} onClose={handleClosePopup} />
     );
   }
-  console.log(movieres);
   return (  
     <div className="my-7 px-1 md:px-20">
       <h1 className="text-[#BB86FC]  font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title text-center mb-5 md:text-start">
