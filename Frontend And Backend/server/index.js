@@ -7,7 +7,7 @@ const port=process.env.PORT||3000;
 
 app.use(
 	cors({
-		origin: "https://movie-recommendation-system-frontend.onrender.com/",
+		origin: "https://movie-recommendation-system-frontend.onrender.com",
 		methods: ["GET", "POST"],
 		allowedHeaders: ["Content-Type"],
 	})
