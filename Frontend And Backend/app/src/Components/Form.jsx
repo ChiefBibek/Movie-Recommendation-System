@@ -4,7 +4,7 @@ import GenreList from "./GenreList";
 import ActorList from "./ActorList";
 
 const axiosInstance = axios.create({
-  baseURL: "https://movie-recommendation-system-14.onrender.com",
+  baseURL: "https://movie-recommendation-system-backend-b3ei.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
