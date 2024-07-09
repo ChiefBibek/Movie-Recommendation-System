@@ -1,29 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Popup from "./Popup";
 
 const MainBody = ({ movieres }) => {
-  const [alertMessage, setAlertMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    if (!Array.isArray(movieres) || movieres.length === 0) {
-      setAlertMessage("Please select at least one genre or actor.");
-      setShowPopup(true);
-    } else {
-      setAlertMessage("");
-      setShowPopup(false);
-    }
-  }, [movieres]);
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
+  if (!Array.isArray(movieres) || movieres.length === 0) {
+    return (
+      <Popup message={`No actors matched with '${movieres}'`}/>
+    );
+  }
+  console.log(movieres);
   return (  
     <div className="my-7 px-1 md:px-20">
-       {showPopup ? (
-        <Popup message={alertMessage} onClose={handleClosePopup} />
-      ) : (
-        <>
       <h1 className="text-[#BB86FC]  font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title text-center mb-5 md:text-start">
         Top 10 Recommended Movies are:
       </h1>
@@ -48,8 +34,7 @@ const MainBody = ({ movieres }) => {
           </li>
         ))}
       </ul>
-      </>
-      )}
+      )
     </div>
   );
 };
