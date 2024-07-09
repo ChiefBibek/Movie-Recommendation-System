@@ -1,8 +1,14 @@
 import React from "react";
+import Popup from "./Popup";
 
 const MainBody = ({ movieres }) => {
+  if (!Array.isArray(movieres) || movieres.length === 0) {
+    return (
+      <Popup message={`No actors matched with '${movieres}'`}/>
+    );
+  }
   console.log(movieres);
-  return (
+  return (  
     <div className="my-7 px-1 md:px-20">
       <h1 className="text-[#BB86FC]  font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title text-center mb-5 md:text-start">
         Top 10 Recommended Movies are:
@@ -17,8 +23,12 @@ const MainBody = ({ movieres }) => {
                 className="w-full h-auto"
               />
               <div className="flex flex-col text-[0.7rem] p-3">
-                <h2 className="uppercase font-semibold text-base text-[#FFF9FB] sm:text-lg">{title}</h2>
-                <h2 className="text-sm text-[#D3D4D9] sm:text-base">IMDb: {rating}</h2>
+                <h2 className="uppercase font-semibold text-base text-[#FFF9FB] sm:text-lg">
+                  {title}
+                </h2>
+                <h2 className="text-sm text-[#D3D4D9] sm:text-base">
+                  IMDb: {rating}
+                </h2>
               </div>
             </div>
           </li>

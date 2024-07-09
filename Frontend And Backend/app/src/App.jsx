@@ -7,7 +7,7 @@ import Form from "./Components/Form";
 import { GlobalProvider } from "./Context/GlobalState";
 import MainBody from "./Components/MainBody";
 import Footer from "./Components/Footer";
-import { Discuss, DNA } from "react-loader-spinner";
+import { DNA } from "react-loader-spinner";
 
 function App() {
   const [submitted, setSubmitted] = useState(false);

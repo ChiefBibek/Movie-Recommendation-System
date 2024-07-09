@@ -37,8 +37,11 @@ app.post("/recommend", (req, res) => {
 		.then((response) => {
 			const result = response.data;
 			console.log("Recommendations:", result);
-
-			res.json({ recommendations: result });
+			if (!Array.isArray(result) || result.length === 0) {
+				res.json({ recommendations: actorValue });
+			  } else {
+				res.json({ recommendations: result });
+			  }
 		})
 		.catch((error) => {
 			console.error("Error fetching recommendations:", error);

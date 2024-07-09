@@ -34,9 +34,9 @@ export const GlobalProvider = ({ children }) => {
     fetchGenres();
   }, []);
 
-  if (loader) {
-    return <Loader />;
-  }
+  // if (loader) {
+  //   return <Loader />;
+  // }
   return (
     <GlobalContext.Provider value={{ options: genres }}>
       {children}
