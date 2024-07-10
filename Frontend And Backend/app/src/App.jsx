@@ -46,10 +46,7 @@ function App() {
                 </div>
             )}
             {submitted && !loading && (
-              <>
-                <hr />
                 <MainBody movieres={movieres} />
-              </>
             )}
           </div>
         </main>
