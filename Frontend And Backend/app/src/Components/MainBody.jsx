@@ -20,7 +20,7 @@ const MainBody = ({ movieres }) => {
           onClose={() => setShowPopup(false)}
         />
       )}
-      {!showPopup && (
+      {!showPopup && Array.isArray(movieres) && (
         <>
           <h1 className="text-[#BB86FC] font-semibold sm:text-lg md:text-xl lg:text-2xl font-list_title text-center mb-5 md:text-start">
             Top 10 Recommended Movies are:
