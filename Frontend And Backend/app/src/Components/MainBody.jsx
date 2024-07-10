@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Popup from "./Popup";
 
 const MainBody = ({ movieres }) => {
