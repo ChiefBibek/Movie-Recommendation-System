@@ -62,7 +62,7 @@ Start Jupyter Notebook and run the recommendation model notebook:
 
     ```bash
     cd app
-    npm run install
+    npm run dev
     ```
 
 **Backend**:
