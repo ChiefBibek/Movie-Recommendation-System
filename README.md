@@ -122,6 +122,6 @@ In the `app` directory:
 
 In the `server` directory:
 
-   
+    npm install  # to install dependencies
     node index.js  # to start the backend
     
