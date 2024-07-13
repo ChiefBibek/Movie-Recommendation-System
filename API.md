@@ -52,9 +52,9 @@ This API provides an interface for a movie recommendation system built using Fla
        ```json
        {
          "recommendations": [
-           { "title": "Movie Title 1", .. },
-           { "title": "Movie Title 2", .. },
-           //  (List of recommended movies)
+           { "title": "Movie Title 1" ,...},
+           { "title": "Movie Title 2",... },
+           // (List of recommended movies)
          ]
        }
        ```
