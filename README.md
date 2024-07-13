@@ -111,7 +111,7 @@ In the `app` directory:
 
    
     npm install  # to install dependencies
-    npm run install  # to run the website
+    npm run dev  # to run the website
     
 
 ### Backend
