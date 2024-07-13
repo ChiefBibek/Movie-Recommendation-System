@@ -26,7 +26,9 @@ const ActorList = ({ setSelectedActor }) => {
     <div className="sm:w-[30rem] md:w-[40rem]">
       <CreatableSelect
         onChange={handleChange}
-        components={animatedComponents}
+        components={{animatedComponents,
+          DropdownIndicator:null
+        }}
         formatCreateLabel={Message}
         isMulti
         isClearable
@@ -56,13 +58,8 @@ const ActorList = ({ setSelectedActor }) => {
           }),
           clearIndicator: () => ({
              color: "#E0E0E0",
-            cursor:'pointer '
-          }),
-          dropdownIndicator: () => ({
-            color: "#E0E0E0",
-            marginLeft: "0.5rem",
-            marginRight: "0.5rem",
-            cursor:'pointer'
+            cursor:'pointer ',
+            marginRight:'0.8rem'
           }),
           control: (styles) => ({
             ...styles,
