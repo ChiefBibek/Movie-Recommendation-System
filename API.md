@@ -1,6 +1,6 @@
 # Movie Recommendation System API
 
-This API provides an interface for a movie recommendation system built using Flask. It allows users to request movie recommendations based on their preferred actors and/or genre.
+This API provides an interface for a movie recommendation system built using Flask. Users can request movie recommendations based on their preferred actors and/or genre.
 
 ## Technologies Used
 
@@ -21,10 +21,7 @@ This API provides an interface for a movie recommendation system built using Fla
        ```json
        {
          "genres": [
-           "Action",
-           "Adventure",
-           "Animation",
-           // .... (Full list of genres)
+           "Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "Game-Show","History", "Horror", "Music", "Musical", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Thriller", "War", "Western"
          ]
        }
        ```
@@ -55,9 +52,9 @@ This API provides an interface for a movie recommendation system built using Fla
        ```json
        {
          "recommendations": [
-           { "title": "Movie Title 1", .... },
-           { "title": "Movie Title 2", .... },
-           // .... (List of recommended movies)
+           { "title": "Movie Title 1", .. },
+           { "title": "Movie Title 2", .. },
+           //  (List of recommended movies)
          ]
        }
        ```
@@ -78,7 +75,7 @@ Install the required dependencies:
 ```bash
 pip install Flask Flask-CORS
 ## Getting Started
-
+```
 Follow these steps to set up and use the Movie Recommendation System API:
 
 ```bash
