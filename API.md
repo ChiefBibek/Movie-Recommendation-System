@@ -77,3 +77,18 @@ Install the required dependencies:
 
 ```bash
 pip install Flask Flask-CORS
+## Getting Started
+
+Follow these steps to set up and use the Movie Recommendation System API:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/movie-recommendation-system.git
+cd movie-recommendation-system
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask server
+python movie_api.py
+
