@@ -17,6 +17,10 @@ Follow these instructions to get the project up and running on your local machin
 - Python 3.x
 - Jupyter Notebook
 - Pandas, NumPy, scikit-learn
+- Flask
+- scipy
+- gunicorn
+- flask_cors
 
 ### Installation
 
