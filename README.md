@@ -20,36 +20,37 @@ Follow these instructions to get the project up and running on your local machin
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/movie-recommendation-system.git
-   cd movie-recommendation-system
-   ```
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/movie-recommendation-system.git
+    cd movie-recommendation-system
+    ```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. **Install Python dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Install Frontend and Backend dependencies**:
+    ```bash
+    # Frontend
+    cd app
+    npm install
+
+    # Backend
+    cd ../server
+    npm install
+    ```
 
 ### Usage
 
-1. Prepare the data:
-   - See `data/README.md` for instructions on downloading and preprocessing movie metadata.
+#### Prepare the Data
 
-2. Run the recommendation model:
-   ```bash
-   jupyter notebook recommendation_model.ipynb
-   ```
+Follow the instructions in `data/README.md` for downloading and preprocessing movie metadata.
 
-### Contributing
+#### Run the Recommendation Model
 
-Contributions are welcome! Please follow these steps to contribute:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Create a new Pull Request
+Start Jupyter Notebook and run the recommendation model notebook:
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+```bash
+jupyter notebook recommendation_model.ipynb
