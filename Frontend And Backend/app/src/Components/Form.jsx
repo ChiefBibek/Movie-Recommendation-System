@@ -63,7 +63,7 @@ const Form = ({ onSubmit, setLoading }) => {
             htmlFor=""
             className="text-[#BB86FC] text-sm sm:text-lg lg:text-xl  font-semibold "
           >
-            Choose your preferred genre
+            Choose your preferred Genre
           </label>
           <GenreList setSelectedGenre={setSelectedGenre} />
         </div>
@@ -72,7 +72,7 @@ const Form = ({ onSubmit, setLoading }) => {
             htmlFor=""
             className="text-[#BB86FC] text-sm  sm:text-lg lg:text-xl  font-semibold "
           >
-            Choose your preferred Actors
+            Input your preferred Actors (Maximum 3)
           </label>
           <ActorList setSelectedActor={setSelectedActor} />
         </div>

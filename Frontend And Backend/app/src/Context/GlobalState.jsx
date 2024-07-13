@@ -3,7 +3,7 @@ import Loader from "../Components/Loader";
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: "https://movie-recommendation-system-14.onrender.com", 
+  baseURL: "https://movie-recommendation-system-s47u.onrender.com", 
   headers: {
     "Content-Type": "application/json",
   },
