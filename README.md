@@ -52,25 +52,25 @@ Follow the instructions in `data/README.md` for downloading and preprocessing mo
 
 Start Jupyter Notebook and run the recommendation model notebook:
 
-    ```bash
+    
     jupyter notebook recommendation_model.ipynb
-    ```
+    
 
 #### Start Frontend and Backend
 
 **Frontend**:
 
-    ```bash
+  
     cd app
     npm run dev
-    ```
+    
 
 **Backend**:
 
-    ```bash
+    
     cd server
     node index.js
-    ```
+    
 
 ## Contributing
 
@@ -109,15 +109,15 @@ For the frontend and backend, change to the `frontend and backend` directory. Th
 
 In the `app` directory:
 
-    ```bash
+   
     npm install  # to install dependencies
     npm run install  # to run the website
-    ```
+    
 
 ### Backend
 
 In the `server` directory:
 
-    ```bash
+   
     node index.js  # to start the backend
-    ```
+    
