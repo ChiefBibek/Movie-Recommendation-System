@@ -12,6 +12,7 @@ This API provides an interface for a movie recommendation system built using Fla
 1. **Get Genres** (GET /genres)
 
    - **Request**
+
      - Method: GET
 
    - **Response**
@@ -21,18 +22,46 @@ This API provides an interface for a movie recommendation system built using Fla
        ```json
        {
          "genres": [
-           "Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "Game-Show","History", "Horror", "Music", "Musical", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Thriller", "War", "Western"
+           "Action",
+           "Adventure",
+           "Animation",
+           "Biography",
+           "Comedy",
+           "Crime",
+           "Documentary",
+           "Drama",
+           "Family",
+           "Fantasy",
+           "Film-Noir",
+           "Game-Show",
+           "History",
+           "Horror",
+           "Music",
+           "Musical",
+           "Mystery",
+           "News",
+           "Reality-TV",
+           "Romance",
+           "Sci-Fi",
+           "Short",
+           "Sport",
+           "Thriller",
+           "War",
+           "Western"
          ]
        }
        ```
+       ![image genres](Images/genres.png)
 
 2. **Recommend Movies** (POST /recommend)
 
    - **Request**
+
      - Method: POST
      - Content-Type: application/json
 
      - **Request Body**
+
        ```json
        {
          "actors": "Comma-separated list of actor names (optional)",
@@ -40,15 +69,19 @@ This API provides an interface for a movie recommendation system built using Fla
        }
        ```
 
+       ![image genres](Images/recommend.png)
+
      - Note: Both `actors` and `genre` are optional parameters. You can provide either, both, or none in the request. The recommendation system will handle missing data accordingly.
 
    - **Response**
+
      - Status code:
        - 200 (OK) upon successful recommendation generation.
        - 500 (Internal Server Error) if an error occurs during recommendation.
      - Content-Type: application/json
 
      - **Success Response**
+
        ```json
        {
          "recommendations": [
@@ -76,6 +109,7 @@ Install the required dependencies:
 pip install Flask Flask-CORS
 ## Getting Started
 ```
+
 Follow these steps to set up and use the Movie Recommendation System API:
 
 ```bash
@@ -89,3 +123,4 @@ pip install -r requirements.txt
 # Run the Flask server
 python movie_api.py
 
+```

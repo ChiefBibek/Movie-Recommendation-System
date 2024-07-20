@@ -4,7 +4,7 @@ This project implements a Movie Recommendation System using data science techniq
 
 ## Movie Recommendation System
 
-![header image](Images/landing.png)
+![landing image](Images/landing.png)
 
 ## Features
 
