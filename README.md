@@ -1,5 +1,5 @@
 # Movie Recommendation System
-![header image](sample.jpg)
+![header image](sample.png)
 This project implements a Movie Recommendation System using data science techniques to provide personalized movie suggestions based on user preferences.
 
 ## Features
