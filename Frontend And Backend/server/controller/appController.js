@@ -1,11 +1,13 @@
-const axios = require("axios");
+import axios from 'axios';
 
-module.exports.recommendations = (req, res) => {
+export const recommendations = (req, res) => {
   const { selectedgenre, selectedactor } = req.body;
   const genreValue = selectedgenre.map((item) => item.value).join("|");
   const actorValue = selectedactor.map((item) => item.value).join(", ");
+  
   console.log("Selected Genres:", genreValue);
   console.log("Selected Actors:", actorValue);
+
   const requestData = {
     actors: actorValue,
     genre: genreValue,
@@ -28,5 +30,4 @@ module.exports.recommendations = (req, res) => {
       console.error("Error fetching recommendations:", error);
       res.status(500).json({ error: "Failed to fetch recommendations" });
     });
-  // res.json({"Message":"Form Submitted"})
 };
